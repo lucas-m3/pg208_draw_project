@@ -10,6 +10,12 @@ SRC=./src/Format/CBitmap.cpp \
     ./src/Image/CImage.cpp   \
     ./src/Image/CLigne.cpp   \
     ./src/Image/CPixel.cpp   \
+    ./src/Formes/Point.cpp   \
+    ./src/Formes/Rectangle.cpp   \
+    ./src/Formes/Disque.cpp   \
+    ./src/Formes/Forme.cpp   \
+    ./src/Formes/Couleur.cpp   \
+    ./src/Formes/Pool.cpp   \
     ./src/main.cpp
 
 OBJ= $(SRC:.cpp=.o)
