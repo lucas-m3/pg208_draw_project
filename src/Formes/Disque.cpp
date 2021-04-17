@@ -40,7 +40,7 @@ void Disque::dessiner(CImage *img) {
                 }
             }
             //contour
-            else if(eq >= r_squared && eq <= r_squared + 50) {
+            else if(eq >= r_squared && eq <= r_squared + 2*_r) {
                 if(p != NULL && c._alpha != 0) {
                     p->RGB(c._R, c._G, c._B);
                 }
