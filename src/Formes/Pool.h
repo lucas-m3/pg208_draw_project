@@ -14,6 +14,7 @@ class Pool {
         void del(Forme *f);
         // void sort_by_z();
         void dessiner(CImage *img);
+        void print_pool();
 };
 
 

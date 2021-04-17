@@ -21,3 +21,10 @@ void Pool::dessiner(CImage *img) {
         (*it)->dessiner(img);
     }
 }
+
+void Pool::print_pool() {
+    cout << "Pool:" << endl;
+    for(vector<Forme*>::iterator it = _array.begin(); it != _array.end(); it++) {
+        cout << "\t" << (*it)->get_tag() << endl;
+    }
+}

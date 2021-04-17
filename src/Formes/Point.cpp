@@ -2,14 +2,13 @@
 
 
 Point::Point() {
-    set_tag("Point");
-    cerr << "creation point" << endl;
+    set_tag("point NI");
 }
 
 // Point::~Point() {}
 
 Point::Point(int x, int y, Couleur c) {
-    Point();
+    set_tag("point");
     set_x(x);
     set_y(y);
     set_fond(c);

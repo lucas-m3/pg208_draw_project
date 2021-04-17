@@ -30,7 +30,7 @@ int CImage::size(){
 
 CLigne* CImage::getLigne(int position){
     if( (position >= taille || position < 0) ){
-        cout << "CImage::getLigne => trying to access " << position << " but the line has only " << taille << " data" << endl;
+        cerr << "CImage::getLigne => trying to access " << position << " but the line has only " << taille << " data" << endl;
     }
     return (position < taille && position >= 0)?liste[position]:NULL;
 }

@@ -2,8 +2,7 @@
 
 
 Rectangle::Rectangle() {
-    set_tag("Rectangle");
-    cerr << "creation rectangle" << endl;
+    set_tag("rectangle NI");
     set_x(0);
     set_y(0);
     set_longueur(0);
@@ -14,7 +13,7 @@ Rectangle::Rectangle() {
 
 Rectangle::Rectangle(int x, int y, int longueur, int hauteur,
                      Couleur fond, Couleur contour) {
-    Rectangle();
+    set_tag("rectangle");
     set_x(x);
     set_y(y);
     set_longueur(longueur);

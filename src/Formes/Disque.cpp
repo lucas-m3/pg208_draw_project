@@ -2,8 +2,7 @@
 #include <math.h>
 
 Disque::Disque() {
-    set_tag("disque");
-    cerr << "creation disque" << endl;
+    set_tag("disque NI");
     set_x(0);
     set_y(0);
     set_radius(0);
@@ -12,7 +11,7 @@ Disque::Disque() {
 }
 
 Disque::Disque(int x, int y, int radius, Couleur fond, Couleur contour) {
-    Disque();
+    set_tag("disque");
     set_x(x);
     set_y(y);
     set_radius(radius);
