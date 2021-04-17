@@ -31,8 +31,9 @@ int CLigne::size(){
 }
 
 CPixel* CLigne::getPixel(int position){
-    if( (position >= taille) ){
+    if( (position >= taille) || position < 0 ){
         cout << "CLigne::getPixel => trying to access " << position << " but the line has only " << taille << " data" << endl;
     }
-    return (position < taille)?ligne[position]:NULL;
+    cout << position << endl;
+    return (position < taille && position >= 0)?ligne[position]:NULL;
 }

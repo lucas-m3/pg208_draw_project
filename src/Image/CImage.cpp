@@ -29,10 +29,10 @@ int CImage::size(){
 }
 
 CLigne* CImage::getLigne(int position){
-    if( (position >= taille) ){
+    if( (position >= taille || position < 0) ){
         cout << "CImage::getLigne => trying to access " << position << " but the line has only " << taille << " data" << endl;
     }
-    return (position < taille)?liste[position]:NULL;
+    return (position < taille && position >= 0)?liste[position]:NULL;
 }
 
 CPixel* CImage::getPixel(int posX, int posY){
