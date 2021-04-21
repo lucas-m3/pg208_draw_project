@@ -43,6 +43,7 @@ int main(int argc, char * argv[]) {
     // Forme* c5 = new Disque(1000, 1000, 2000, Couleur(255, 255, 0, 100), Couleur(100,100,0, 100));
     Forme *s1 = new Carre(1000, 1000, 300, Couleur(14, 244, 65, 100), Couleur(255, 62, 146, 100));
     Forme *l1 = new Ligne(0,0, 1999, 1999, Couleur(255, 0, 0, 100));
+    Forme *l2 = new Ligne(500, 250, 0, 0, Couleur(0, 255, 0, 100));
 
     // pool->add(c5);
     pool->add(p);
@@ -54,6 +55,7 @@ int main(int argc, char * argv[]) {
     pool->add(c4);
     pool->add(s1);
     pool->add(l1);
+    pool->add(l2);
 
     pool->print_pool();
 
