@@ -4,7 +4,7 @@ CFLAGS=-Ofast -march=native -mtune=native -std=c++14 -g
 
 LDFLAGS=
 
-EXEC=main
+EXEC=./bin/main
 
 SRC=./src/Format/CBitmap.cpp \
     ./src/Image/CImage.cpp   \
@@ -30,11 +30,9 @@ main: $(OBJ)
 %.o: %.cpp
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-.PHONY: clean mrproper
+.PHONY: clean 
 
 clean:
 	find ./bin -name main -exec rm {} \;
 	find ./src -name *.o  -exec rm {} \;
 
-mrproper: clean
-	rm $(EXEC)
