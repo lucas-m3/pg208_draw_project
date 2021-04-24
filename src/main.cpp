@@ -35,7 +35,6 @@ int main(int argc, char * argv[]) {
     Pool* pool = new Pool();
     Forme* p = new Point(0, 0 , Couleur(255, 0, 0, 100));
     Forme* p2 = new Point(50, 50 , Couleur(0, 255, 0, 100));
-    Forme* r1 = new Rectangle(80, 80, 20, 100, Couleur(0,0,255,100), Couleur(255,255,255,100));
     Forme* c1 = new Disque(100, 100, 20, Couleur(255, 255, 0, 100), Couleur(255,0,255, 100));
     Forme* c2 = new Disque(100, 110, 40, Couleur(255, 255, 0, 0), Couleur(255,100,0, 100));
     Forme* c3 = new Disque(100, 110, 100, Couleur(255, 255, 0, 0), Couleur(100,100,0, 100));
@@ -44,11 +43,11 @@ int main(int argc, char * argv[]) {
     Forme *s1 = new Carre(1000, 1000, 300, Couleur(14, 244, 65, 100), Couleur(255, 62, 146, 100));
     Forme *l1 = new Ligne(0,0, 1999, 1999, Couleur(255, 0, 0, 100));
     Forme *l2 = new Ligne(500, 250, 0, 0, Couleur(0, 255, 0, 100));
+    Forme* r1 = new Rectangle(80, 80, 20, 100, Couleur(0,0,255,30), Couleur(255,255,255,100));
 
     // pool->add(c5);
     pool->add(p);
     pool->add(p2);
-    pool->add(r1);
     pool->add(c1);
     pool->add(c2);
     pool->add(c3);
@@ -56,6 +55,7 @@ int main(int argc, char * argv[]) {
     pool->add(s1);
     pool->add(l1);
     pool->add(l2);
+    pool->add(r1);
 
     pool->print_pool();
 

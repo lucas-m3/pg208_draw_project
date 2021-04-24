@@ -4,7 +4,7 @@ CFLAGS=-Ofast -march=native -mtune=native -std=c++14 -g
 
 LDFLAGS=
 
-EXEC=./bin/main
+EXEC=main
 
 SRC=./src/Format/CBitmap.cpp \
     ./src/Image/CImage.cpp   \

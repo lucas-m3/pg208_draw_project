@@ -29,6 +29,7 @@ private:
 	int red;
 	int green;
 	int blue;
+	int compute_component(int alpha, int previous_color, int wished_color);
 	
 public:
 	CPixel(int r, int g, int b);
@@ -43,6 +44,7 @@ public:
 	int Blue();
 	
 	void RGB(int r, int g, int b);
+	void RGB(int r, int g, int b, int alpha);
 	
 };
 

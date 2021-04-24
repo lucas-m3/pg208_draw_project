@@ -35,13 +35,13 @@ void Disque::dessiner(CImage *img) {
             // fond
             if(eq < r_squared) {
                 if(p != NULL && f._alpha != 0) {
-                    p->RGB(f._R, f._G, f._B);
+                    p->RGB(f._R, f._G, f._B, f._alpha);
                 }
             }
             //contour
             else if(eq >= r_squared && eq <= r_squared + 2*_r) {
                 if(p != NULL && c._alpha != 0) {
-                    p->RGB(c._R, c._G, c._B);
+                    p->RGB(c._R, c._G, c._B, c._alpha);
                 }
             }
         }

@@ -6,7 +6,7 @@ class Couleur {
         int _R;
         int _G;
         int _B;
-        int _alpha;
+        int _alpha; // 0->invisible, 100->opaque
 
         Couleur();
         Couleur(int R, int G, int B, int alpha);

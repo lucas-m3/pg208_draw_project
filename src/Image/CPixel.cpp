@@ -53,3 +53,21 @@ void CPixel::RGB(int r, int g, int b){
 	Green(g);
 	Blue(b);
 }
+
+void CPixel::RGB(int r, int g, int b, int alpha) {
+	Red(compute_component(alpha, Red(), r));
+	Green(compute_component(alpha, Green(), g));
+	Blue(compute_component(alpha, Blue(), b));
+}
+
+int CPixel::compute_component(int alpha, int previous_color, int wished_color) {
+    int pix_comp = ( (100 - alpha)*previous_color + alpha*wished_color )/100;
+
+    if( pix_comp <= 255 ) {
+        return pix_comp;
+    }
+    else {
+        std::cerr << "computed transparency out of range" << std::endl;
+        return previous_color;
+    }
+}
