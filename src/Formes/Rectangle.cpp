@@ -1,25 +1,29 @@
 #include "Rectangle.h"
 
 
-Rectangle::Rectangle() {
+Rectangle::Rectangle() :
+    Forme()
+{
     set_tag("rectangle NI");
-    set_x(0);
-    set_y(0);
     set_longueur(0);
     set_hauteur(0);
-    set_fond(Couleur());
-    set_contour(Couleur());
 }
 
 Rectangle::Rectangle(int x, int y, int longueur, int hauteur,
-                     Couleur fond, Couleur contour) {
+                     Couleur fond, Couleur contour) :
+    Forme(x, y, fond, contour)
+{
     set_tag("rectangle");
-    set_x(x);
-    set_y(y);
     set_longueur(longueur);
     set_hauteur(hauteur);
-    set_fond(fond);
-    set_contour(contour);
+}
+
+Rectangle::Rectangle(int x, int y, int longueur, int hauteur,
+                     Couleur fond, Couleur contour, int z_index) :
+    Forme(x, y, fond, contour, z_index)
+{
+    set_tag("rectangle");
+    set_z_index(z_index);
 }
 
 void Rectangle::dessiner(CImage *img) {
@@ -39,7 +43,7 @@ void Rectangle::dessiner(CImage *img) {
     }
 
     //draw vertical lines
-    x = y0;
+    x = x0;
     for(y = y0; y < y0 + _h + 1; y++) {
         CPixel *p1 = img->getPixel(x, y);
         CPixel *p2 = img->getPixel(x + _l, y);

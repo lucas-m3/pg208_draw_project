@@ -10,6 +10,8 @@ class Rectangle : public Forme {
     public:
         Rectangle();
         Rectangle(int x, int y, int longueur, int hauteur, Couleur fond, Couleur contour);
+        Rectangle(int x, int y, int longueur, int hauteur, Couleur fond, Couleur contour,
+                  int z_index);
         void dessiner(CImage *img);
         void set_hauteur(int h);
         void set_longueur(int l);

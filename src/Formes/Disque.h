@@ -10,6 +10,8 @@ class Disque : public Forme {
     public:
         Disque();
         Disque(int x, int y, int radius, Couleur fond, Couleur contour);
+        Disque(int x, int y, int radius, Couleur fond, Couleur contour, int z_index);
+
         void dessiner(CImage *img);
         void set_radius(int r);
 };

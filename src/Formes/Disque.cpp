@@ -1,22 +1,24 @@
 #include "Disque.h"
 #include <math.h>
 
-Disque::Disque() {
+Disque::Disque() : Forme()
+{
     set_tag("disque NI");
-    set_x(0);
-    set_y(0);
     set_radius(0);
-    set_fond(Couleur());
-    set_contour(Couleur());
 }
 
-Disque::Disque(int x, int y, int radius, Couleur fond, Couleur contour) {
+Disque::Disque(int x, int y, int radius, Couleur fond, Couleur contour) :
+    Forme(x, y, fond, contour)
+{
     set_tag("disque");
-    set_x(x);
-    set_y(y);
     set_radius(radius);
-    set_fond(fond);
-    set_contour(contour);
+}
+
+Disque::Disque(int x, int y, int radius, Couleur fond, Couleur contour, int z_index) :
+    Forme(x, y, fond, contour, z_index)
+{
+    set_tag("disque");
+    set_radius(radius);
 }
 
 void Disque::dessiner(CImage *img) {

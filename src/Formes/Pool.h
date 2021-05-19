@@ -7,12 +7,12 @@
 class Pool {
     private:
         vector<Forme*> _array;
+        void sort_by_z();
     public:
         Pool();
         ~Pool();
         void add(Forme *f);
         void del(Forme *f);
-        // void sort_by_z();
         void dessiner(CImage *img);
         void print_pool();
 };

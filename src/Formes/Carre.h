@@ -8,6 +8,7 @@ class Carre : public Rectangle {
     public:
         Carre();
         Carre(int x, int y, int cote, Couleur fond, Couleur contour);
+        Carre(int x, int y, int cote, Couleur fond, Couleur contour, int z_index);
 };
 
 

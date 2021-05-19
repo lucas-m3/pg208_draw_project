@@ -18,6 +18,7 @@ SRC=./src/Format/CBitmap.cpp \
     ./src/Formes/Forme.cpp   \
     ./src/Formes/Couleur.cpp   \
     ./src/Formes/Pool.cpp   \
+    ./src/Parser/Parser.cpp   \
     ./src/main.cpp
 
 OBJ= $(SRC:.cpp=.o)

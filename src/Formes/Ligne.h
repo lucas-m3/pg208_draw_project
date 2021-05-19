@@ -13,6 +13,8 @@ class Ligne : public Forme {
     public:
         Ligne();
         Ligne(int x1, int y1, int x2, int y2, Couleur fond);
+        Ligne(int x1, int y1, int x2, int y2, Couleur fond, int z_index);
+
         void dessiner(CImage *img);
         void set_coord(int x1, int y1, int x2, int y2);
 };

@@ -1,15 +1,23 @@
 #include "Ligne.h"
 
-Ligne::Ligne() {
+Ligne::Ligne() :
+    Forme()
+{
     set_tag("ligne NI"); //Non Initialisé
     set_coord(0, 0, 0, 0);
-    set_fond(Couleur());
 }
 
-Ligne::Ligne(int x1, int y1, int x2, int y2, Couleur fond) {
+Ligne::Ligne(int x1, int y1, int x2, int y2, Couleur fond)
+{
     set_tag("ligne");
     set_coord(x1, y1, x2, y2);
     set_fond(fond);
+}
+
+Ligne::Ligne(int x1, int y1, int x2, int y2, Couleur fond, int z_index) :
+    Ligne(x1, y1, x2, y2, fond)
+{
+    set_z_index(z_index);
 }
 
 void Ligne::dessiner(CImage *img) {

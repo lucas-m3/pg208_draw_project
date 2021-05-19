@@ -1,0 +1,19 @@
+# R, G et B appartiennent à [0, 255]
+# alpha appartient à [0, 100] (100 = opaque)
+
+# POINT:    X, Y,           R, G, B, alpha [, z];
+# LIGNE:    X1, Y1, X2, Y2, R, G, B, alpha [, z];
+
+## contours seulement
+# RECTANGLE:X, Y, L, H,     R, G, B, alpha [, z];
+# CARRE:    X, Y, COTE,     R, G, B, alpha [, z];
+# CERCLE:   X, Y, R,        R, G, B, alpha [, z];
+
+## pleins
+# RECTANGLES:X, Y, L, H,    R, G, B, alpha [, z];
+# CARRES:    X, Y, COTE,    R, G, B, alpha [, z];
+# CERCLES:   X, Y, R,       R, G, B, alpha [, z];
+
+POINT: 100, 100, 255, 255, 255, 100;
+CERCLE: 110, 110, 0, 255, 0, 100;
+RECTANGLES: 110, 110, 255, 0, 0, 60;
