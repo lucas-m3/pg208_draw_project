@@ -16,7 +16,7 @@ using namespace std;
 
 #include "./Parser/Parser.h"
 
-#define TEST 0
+#define TEST 1
 
 int main(int argc, char * argv[]) {
     if(TEST == 0) {
@@ -80,8 +80,11 @@ int main(int argc, char * argv[]) {
         }
 
         string path(argv[1]);
-        Parser parser(path);
+        Parser parser;
+        Pool* pool = new Pool();
 
+        parser.parse_file(path, pool);
+        pool->print_pool();
     }
     return 1;
 }

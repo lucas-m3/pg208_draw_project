@@ -3,16 +3,15 @@
 
 #include <fstream>
 #include <string>
+#include "../Formes/Pool.h"
 
 using namespace std;
 
 class Parser {
-    private:
-        string _in_path;
-        bool parse_file();
     public:
         Parser();
-        Parser(string in_path);
+
+        bool parse_file(string path, Pool* pool);
 };
 
 
