@@ -1,0 +1,41 @@
+# R, G et B appartiennent à [0, 255]
+# alpha appartient à [0, 100] (100 = opaque)
+# index: top=100000 behind=0
+
+# POINT:    X, Y,           R, G, B, alpha [, z];
+# LIGNE:    X1, Y1, X2, Y2, R, G, B, alpha [, z];
+
+## contours seulement
+# RECTANGLE:X, Y, L, H,     R, G, B, alpha [, z];
+# CARRE:    X, Y, COTE,     R, G, B, alpha [, z];
+# CERCLE:   X, Y, R,        R, G, B, alpha [, z];
+
+## pleins
+# RECTANGLES:X, Y, L, H,    R, G, B, alpha [, z];
+# CARRES:    X, Y, COTE,    R, G, B, alpha [, z];
+# CERCLES:   X, Y, R,       R, G, B, alpha [, z];
+
+
+#fond ciel
+CARRES:0,0,500,40,44,52,100,0;
+#fond mer
+RECTANGLES:0,0,500,320,36,64,78,100,1;
+#jetee
+RECTANGLES:0,320,120,10,79,79,79,100,2;
+#phare
+RECTANGLES:110,330,5,15,79,79,79,100,2;
+RECTANGLES:108,345,9,3,79,79,79,100,2;
+CERCLES:112,350,3,255,253,221,100,3;
+CERCLES:112,350,10,255,253,221,20,4;
+
+#reflet lumiere phare
+CERCLES:112,290,3,255,253,221,40,3;
+CERCLES:112,290,10,255,253,221,10,4;
+
+
+#lune
+CERCLES:440,440,40,255,253,221,100,1;
+CERCLES:447,447,40,40,44,52,100,2;
+#reflet lune
+CERCLES:440,200,40,255,253,221,30,1;
+CERCLES:447,193,40,36,64,78,80,2;

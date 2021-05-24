@@ -29,7 +29,7 @@ void Ligne::dessiner(CImage *img) {
 
     int y;
 
-    for(int x = _x1; x <= _x2 ; x++) {
+    for(int x = _x1; x < _x2 ; x++) {
         y = (int)( (y2 - y1)/(x2 - x1)*(x - x1) + y1 );
 //        cout << "Ligne y: " << y << endl;
         CPixel *p = img->getPixel(x, y);
@@ -37,6 +37,14 @@ void Ligne::dessiner(CImage *img) {
     }
 
 }
+
+// void Ligne::dessiner(CImage *img) {
+//     Couleur f = get_fond();
+//     float x1 = (float)_x1;
+//     float y1 = (float)_y1;
+//     float x2 = (float)_x2;
+//     float y2 = (float)_y2;
+// }
 
 void Ligne::set_coord(int x1, int y1, int x2, int y2) {
     // x1 and y1 must be inferior than x2 and y2

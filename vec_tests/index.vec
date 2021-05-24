@@ -1,0 +1,47 @@
+# R, G et B appartiennent à [0, 255]
+# alpha appartient à [0, 100] (100 = opaque)
+# index: top=100000 behind=0
+
+# POINT:    X, Y,           R, G, B, alpha [, z];
+# LIGNE:    X1, Y1, X2, Y2, R, G, B, alpha [, z];
+
+## contours seulement
+# RECTANGLE:X, Y, L, H,     R, G, B, alpha [, z];
+# CARRE:    X, Y, COTE,     R, G, B, alpha [, z];
+# CERCLE:   X, Y, R,        R, G, B, alpha [, z];
+
+## pleins
+# RECTANGLES:X, Y, L, H,    R, G, B, alpha [, z];
+# CARRES:    X, Y, COTE,    R, G, B, alpha [, z];
+# CERCLES:   X, Y, R,       R, G, B, alpha [, z];
+
+CARRES:0,0,400,10,10,10,100,0;
+CARRE:0,0,400,255,0,0,100,15;
+CARRE:50,30,400,255,0,0,100,1;
+
+# test index sorting
+CARRES:100,50,30,0,255,255,100,4;
+CARRES:120,70,30,255,0,255,100,5;
+CARRES:140,90,30,255,255,0,100,6;
+CARRES:160,110,30,0,0,255,100,7;
+CARRES:180,130,30,255,0,0,100,8;
+
+# test transparency
+CARRES:20,300,20,0,190,135,100,9;
+CARRES:40,300,20,0,190,135,80,9;
+CARRES:60,300,20,0,190,135,60,9;
+CARRES:80,300,20,0,190,135,40,9;
+CARRES:100,300,20,0,190,135,20,9;
+
+# test outbounds
+LIGNE:400,400,450,430,255,0,0,100;
+LIGNE:400,0,450,30,255,0,0,100;
+LIGNE:0,400,50,430,255,0,0,100;
+
+# test transparency 2
+CARRES:260,260,120,255,255,255,100;
+CERCLES:300,300,30,0,0,255,50;
+CERCLES:340,300,30,255,0,0,50;
+CERCLES:320,330,30,0,255,0,50;
+
+

@@ -188,11 +188,11 @@ bool CBitmap::SaveBMP(string name){
 
                         /* On doit gerer le cas ou la largeur n'est pas un multiple de 4...  */
                         if( biWidth%4 != 0){
-                                cerr << " largeur n'est pas multiple de 4 : " << biWidth << endl;
+                                // cerr << " largeur n'est pas multiple de 4 : " << biWidth << endl;
                                 for(int x=0; x<(biWidth%4); x++){
                                         t[0]= 0; t[1]= 0; t[2]= 0;
                                         myfile.write(t, 1);
-                                        cerr << "  Ecriture d'un byte de bourage (colonne%4 != 0);" << endl;
+                                        // cerr << "  Ecriture d'un byte de bourage (colonne%4 != 0);" << endl;
                                 }
                         }
                         /* Fin de la gestion des lignes de taille non modulo 4 */

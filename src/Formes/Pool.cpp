@@ -20,7 +20,7 @@ void Pool::sort_by_z() {
     Forme* tmp;
     for(vector<Forme*>::iterator it = _array.begin(); it != _array.end(); it++) {
         for(vector<Forme*>::iterator it_comp = _array.begin(); it_comp != _array.end(); it_comp++) {
-            if( (*it_comp)->get_z_index() < (*it)->get_z_index() ) {
+            if( (*it_comp)->get_z_index() > (*it)->get_z_index() ) {
                 tmp = *it_comp;
                 *it_comp = *it;
                 *it = tmp;
