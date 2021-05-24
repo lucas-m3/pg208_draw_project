@@ -39,7 +39,6 @@ bool Parser::parse_file(string path, Pool* pool) {
                     // get ID
                     id = line.substr(0, pos);
                     line.erase(0, pos+1);
-                    // cout << "id: " << id << endl;
 
                     // get parameters
                     while(line.find(",") != string::npos) {
@@ -51,20 +50,21 @@ bool Parser::parse_file(string path, Pool* pool) {
                     //special case for last parameter
                     line_args.push_back(stoi(line.substr(0, line.find(";"))));
 
-                    cout << "id " << id << endl;
                     //add form to pool
                     if( id.compare("RECTANGLE") == 0 ) {
-                        cerr << "Creating rectangle " << line_args.size() << endl;
                         if(line_args.size() == 8) {
                             pool->add(new Rectangle(line_args[0], //x
                                                     line_args[1], //y
                                                     line_args[2], //l
                                                     line_args[3], //h
-                                                    Couleur(line_args[4], //R
+                                                    Couleur(line_args[4], //R countour
                                                             line_args[5], //G
                                                             line_args[6], //B
                                                             line_args[7]), //alpha
-                                                    Couleur(0,0,0,0) //empty
+                                                    Couleur(line_args[4], //R remplissage
+                                                            line_args[5], //G
+                                                            line_args[6], //B
+                                                            line_args[7]) //alpha
                                                    ));
                             x_max = max(x_max, line_args[0] + line_args[2]);
                             y_max = max(y_max, line_args[1] + line_args[3]);
@@ -78,7 +78,10 @@ bool Parser::parse_file(string path, Pool* pool) {
                                                             line_args[5], //G
                                                             line_args[6], //B
                                                             line_args[7]), //alpha
-                                                    Couleur(0,0,0,0), //empty
+                                                    Couleur(line_args[4], //R remplissage
+                                                            line_args[5], //G
+                                                            line_args[6], //B
+                                                            line_args[7]), //alpha
                                                     line_args[8] //z index
                                                    ));
                             x_max = max(x_max, line_args[0] + line_args[2]);
@@ -87,15 +90,34 @@ bool Parser::parse_file(string path, Pool* pool) {
                     }
                     else if( id.compare("CARRE") == 0 ) {
                         if(line_args.size() == 7) {
-                            cerr << "Creating square" << endl;
                             pool->add(new Carre(line_args[0], //x
                                                 line_args[1], //y
                                                 line_args[2], //c
                                                 Couleur(line_args[3], //R
                                                         line_args[4], //G
                                                         line_args[5], //B
-                                                        line_args[6]), //
-                                                Couleur(0,0,0,0) //empty
+                                                        line_args[6]),//alpha
+                                                Couleur(line_args[3], //R
+                                                        line_args[4], //G
+                                                        line_args[5], //B
+                                                        line_args[6]) //alpha
+                                    ));
+                            x_max = max(x_max, line_args[0] + line_args[2]);
+                            y_max = max(y_max, line_args[1] + line_args[2]);
+                        }
+                        else if(line_args.size() == 8) {
+                            pool->add(new Carre(line_args[0], //x
+                                                line_args[1], //y
+                                                line_args[2], //c
+                                                Couleur(line_args[3], //R
+                                                        line_args[4], //G
+                                                        line_args[5], //B
+                                                        line_args[6]),//alpha
+                                                Couleur(line_args[3], //R
+                                                        line_args[4], //G
+                                                        line_args[5], //B
+                                                        line_args[6]), //alpha
+                                                line_args[7] //z index
                                     ));
                             x_max = max(x_max, line_args[0] + line_args[2]);
                             y_max = max(y_max, line_args[1] + line_args[2]);
@@ -111,6 +133,20 @@ bool Parser::parse_file(string path, Pool* pool) {
                                                          line_args[5], //B
                                                          line_args[6]), //alpha
                                                  Couleur(0,0,0,0) //empty
+                                      ));
+                            x_max = max(x_max, line_args[0] + line_args[2]);
+                            y_max = max(y_max, line_args[1] + line_args[2]);
+                        }
+                        else if(line_args.size() == 8) {
+                            pool->add(new Disque(line_args[0], //x
+                                                 line_args[1], //y
+                                                 line_args[2], //radius
+                                                 Couleur(line_args[3], //R
+                                                         line_args[4], //G
+                                                         line_args[5], //B
+                                                         line_args[6]), //alpha
+                                                 Couleur(0,0,0,0), //empty
+                                                 line_args[7] //z index
                                       ));
                             x_max = max(x_max, line_args[0] + line_args[2]);
                             y_max = max(y_max, line_args[1] + line_args[2]);
@@ -147,9 +183,11 @@ bool Parser::parse_file(string path, Pool* pool) {
 
                     line_args.clear();
                 }
-                cout << "xmax " << x_max << " ymax " << y_max << endl;
             }
         }
+
+        _width = x_max;
+        _height = y_max;
 
         infile.close();
         return true;
@@ -158,4 +196,12 @@ bool Parser::parse_file(string path, Pool* pool) {
         cerr << "ERROR: Could not open file " << path << endl;
         return false;
     }
+}
+
+int Parser::get_width() {
+    return _width;
+}
+
+int Parser::get_height() {
+    return _height;
 }

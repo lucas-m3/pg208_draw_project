@@ -16,6 +16,8 @@ Forme::Forme(int x, int y, Couleur fond, Couleur contour) {
     set_z_index(10);
 }
 
+Forme::~Forme() {}
+
 Forme::Forme(int x, int y, Couleur fond, Couleur contour, int z_index) :
     Forme(x, y, fond, contour)
 {

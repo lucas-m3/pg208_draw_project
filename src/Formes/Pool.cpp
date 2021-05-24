@@ -2,12 +2,12 @@
 
 Pool::Pool() {}
 
-// Pool::~Pool() {
-//     for(vector<Forme*>::iterator it = _array.begin(); it != _array.end(); it++) {
-//         delete (*it);
-//     }
-//     _array.clear();
-// }
+Pool::~Pool() {
+    for(vector<Forme*>::iterator it = _array.begin(); it != _array.end(); it++) {
+        delete (*it);
+    }
+    _array.clear();
+}
 
 void Pool::add(Forme *f) {
     _array.push_back(f);

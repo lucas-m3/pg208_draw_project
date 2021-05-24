@@ -31,8 +31,9 @@ void Ligne::dessiner(CImage *img) {
 
     for(int x = _x1; x <= _x2 ; x++) {
         y = (int)( (y2 - y1)/(x2 - x1)*(x - x1) + y1 );
+//        cout << "Ligne y: " << y << endl;
         CPixel *p = img->getPixel(x, y);
-        p->RGB(f._R, f._G, f._B, f._alpha);
+        if(p != NULL) p->RGB(f._R, f._G, f._B, f._alpha);
     }
 
 }

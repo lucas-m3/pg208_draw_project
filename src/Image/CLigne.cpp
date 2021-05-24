@@ -23,7 +23,7 @@ CLigne::CLigne(){
 CLigne::~CLigne(){
     for(int i=0; i<taille; i++)
         delete ligne[i];
-    delete ligne;
+    delete[] ligne;
 }
 
 int CLigne::size(){

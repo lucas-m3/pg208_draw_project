@@ -18,6 +18,7 @@ class Forme {
         Forme();
         Forme(int x, int y, Couleur fond, Couleur contour);
         Forme(int x, int y, Couleur fond, Couleur contour, int z_index);
+        virtual ~Forme();
 
         virtual void dessiner(CImage *img) = 0;
 

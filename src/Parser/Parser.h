@@ -8,10 +8,15 @@
 using namespace std;
 
 class Parser {
+    private:
+        int _width; //deduced from maximal x coordinate
+        int _height; // y
     public:
         Parser();
 
         bool parse_file(string path, Pool* pool);
+        int get_width();
+        int get_height();
 };
 
 

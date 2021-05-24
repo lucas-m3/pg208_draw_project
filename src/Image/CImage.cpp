@@ -21,7 +21,7 @@ CImage::CImage(int hauteur, int largeur){
 CImage::~CImage(){
     for(int i=0; i<taille; i++)
         delete liste[i];
-    delete liste;
+    delete[] liste;
 }
 
 int CImage::size(){
