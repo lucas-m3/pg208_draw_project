@@ -35,7 +35,7 @@ void Rectangle::dessiner(CImage *img) {
     y = y0;
     for(x = x0; x < x0 + _l; x++) {
         CPixel *p1 = img->getPixel(x, y);
-        CPixel *p2 = img->getPixel(x, y + _h);
+        CPixel *p2 = img->getPixel(x, y + _h - 1);
         Couleur c = get_contour();
 
         if(p1 != NULL) p1->RGB(c._R, c._G, c._B, c._alpha);
@@ -44,9 +44,9 @@ void Rectangle::dessiner(CImage *img) {
 
     //draw vertical lines
     x = x0;
-    for(y = y0; y < y0 + _h + 1; y++) {
+    for(y = y0+1; y < y0 + _h - 1; y++) {
         CPixel *p1 = img->getPixel(x, y);
-        CPixel *p2 = img->getPixel(x + _l, y);
+        CPixel *p2 = img->getPixel(x + _l - 1, y);
         Couleur c = get_contour();
 
         if(p1 != NULL) p1->RGB(c._R, c._G, c._B, c._alpha);
@@ -54,8 +54,8 @@ void Rectangle::dessiner(CImage *img) {
     }
 
     //fill rectangle
-    for(x = x0 + 1; x < x0 + _l; x++) {
-        for(y = y0 + 1; y < y0 + _h; y++) {
+    for(x = x0 + 1; x < x0 + _l - 1; x++) {
+        for(y = y0 + 1; y < y0 + _h - 1; y++) {
             CPixel *p = img->getPixel(x, y);
             Couleur c = get_fond();
             if(p != NULL) p->RGB(c._R, c._G, c._B, c._alpha);
